@@ -21,12 +21,15 @@
 }
 
 .ezmodal-container {
-    background: #fff;
+    color:white !important;
+    width: 80% !important;
+    background: #2E2E2E;
     padding: 0;
-    font-size: 14px;
+    font-size: 20px;
     position: fixed;
     top: 50%;
     left: 50%;
+    width: 100px;
     z-index: 90001;
     border-radius: 7px;
     -webkit-box-shadow: 0px 0px 15px 0px rgba(50, 50, 50, 0.8);
@@ -35,6 +38,7 @@
     -webkit-transform: translateY(-50%) translateX(-50%); 
         -ms-transform: translateY(-50%) translateX(-50%);
             transform: translateY(-50%) translateX(-50%);
+    color: black;
 }
 
 .ezmodal .ezmodal-close {
@@ -68,9 +72,33 @@
 }
 
 .ezmodal .ezmodal-footer {
-    padding: 10px 20px;
-    background: #efefef;
+    padding: 0px 10px;
+    background: #1A1A1A;
     border-top: 1px solid #e3e3e3;
     text-align: right;
     border-radius: 0 0 7px 7px;
+}
+
+.confirm{
+    float:left;
+    background-color: #1A1A1A;
+    border:none;
+    color:white;
+    font-size: 14pt;
+    border-right: 1px solid #e3e3e3;
+    width: 100px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.close{
+    /*float:left;*/
+    background-color: #1A1A1A;
+    border:none;
+    color:white;
+    font-size: 14pt;
+    border-left: 1px solid #e3e3e3;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    width: 100px;
 }

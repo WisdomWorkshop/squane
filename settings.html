@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<link rel='stylesheet' type='text/css' href='style.css'/>
+		<link rel='stylesheet' type='text/css' href='ezmodal.css'/>
 		<script type="text/javascript" src="store.js"></script>
 		<script src="jquery.min.js"></script>
 		<script type="text/javascript" src="script.js"></script>
@@ -58,6 +59,9 @@
 		color:white;
 		margin-top: 15px;
 	}
+	.confirm{
+
+	}
 	</style>
 	<body>
 		<a href="menu.html"><img src="images/squane-logo.png" class="top-image"></a>
@@ -66,9 +70,22 @@
 			<div class="line"></div>
 			<button onclick="change(0)" id="light">Light theme</button>
 			<button onclick="change(1)" id="dark">Dark theme</button>
-			<button onclick="reset()" id="danger">Reset game</button>
+			<button ezmodal-target="#resetDiv" id="danger">Reset game</button>
 		</div>
 
+		<div id="resetDiv" class="ezmodal" ezmodal-closable="false">
+            <div class="ezmodal-container">
+                <div class="ezmodal-content">
+                    Reset game?<br>
+                    After this you will have 0 money, default design, no achievements finished, no superpowers stored...
+                </div>
+                <div class="ezmodal-footer">
+                	<button class="confirm" type="button" onclick="reset()" data-dismiss="ezmodal">Continue</button>  
+                    <button class="close" type="button" data-dismiss="ezmodal">Close</button>       			
+                </div>
+            </div>
+        </div>
+		
 		<script type="text/javascript">
 			function change(n){
 				localStorage.setItem("bg", n);
@@ -76,9 +93,6 @@
 			}
 
 			function reset() {
-				var userAnswer = confirm("Reset game?\nAfter this you will have 0 money, default design, no achievements finished, no superpowers stored...\nAre you sure?");
-
-				if(userAnswer){
 					localStorage.setItem("visited",false);
 					localStorage.setItem("totalgames",0);
 					localStorage.setItem("mscore",0);
@@ -93,8 +107,8 @@
 					store.remove('ach_4');
 					store.remove('achievements_loaded');
 					store.remove('havePlayed');
-				}
 			}
 		</script>
+		<script type="text/javascript" src="ezmodal.js"></script>
 	</body>
 </html>
